@@ -10,7 +10,7 @@ jobs:
       - name: python_install
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8.10'
+          python-version: '3.x'
       - name: poetry_install
         run: poetry install
       - run: make pytest
