@@ -1,1 +1,13 @@
+name: main_pytest
 
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check_out_repository_code
+        uses: actions/checkout@v3
+        
+      - name: run_pytest
+        run: make pytest
