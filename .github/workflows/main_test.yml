@@ -12,5 +12,5 @@ jobs:
         with:
           python-version: '3.x'
       - name: poetry_install
-        run: poetry install
+        run: curl -sSL https://install.python-poetry.org | python3 -
       - run: make pytest
