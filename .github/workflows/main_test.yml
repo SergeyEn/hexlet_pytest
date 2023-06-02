@@ -4,11 +4,15 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8.1]
-        poetry-version: [1.1.13]
-        
+    
     steps:
-      - uses: actions/checkout@v3      
+      - uses: actions/checkout@v3 
+      - name: python_install
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8.10'
+      - name: poetry_install
+        uses: actions/setip-poetry@v1
+        with:
+          poetry-version: '1.1.13'
       - run: make pytest
