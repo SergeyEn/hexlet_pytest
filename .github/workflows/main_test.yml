@@ -5,6 +5,8 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:        
+    steps:
+      - uses: actions/checkout@v3
+      
       - name: run_pytest
         run: make pytest
